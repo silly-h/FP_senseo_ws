@@ -49,7 +49,7 @@ int main(int argc, char** argv){
     dai::rosBridge::ImageConverter rgbConverter("camera4/camera_link", false);
     dai::rosBridge::BridgePublisher<sensor_msgs::msg::Image, dai::ImgFrame> rgbPublish(imgQueue,
                                                                                   node, 
-                                                                                  std::string("/sensing/camera/traffic_light/image_raw"),
+                                                                                  std::string("color/image"),
                                                                                   std::bind(&dai::rosBridge::ImageConverter::toRosMsg, 
                                                                                   &rgbConverter, // since the converter has the same frame name
                                                                                                   // and image type is also same we can reuse it

@@ -46,7 +46,7 @@ public:
 
         // 创建发布者
         publisher_1 = this->create_publisher<sensor_msgs::msg::PointCloud2>(
-            "/sensing/lidar/top/outlier_filtered/pointcloud",
+            "/points_raw",
             10);
         publisher_2 = this->create_publisher<sensor_msgs::msg::PointCloud2>(
             "/sensing/lidar/concatenated/pointcloud",
@@ -54,7 +54,7 @@ public:
 
         // 订阅原始点云消息
         subscription_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-            "/points_raw",
+            "/rslidar_points",
             10,
             std::bind(&LidarTransformNode::pointCloudCallback, this, std::placeholders::_1));
     }
@@ -80,7 +80,7 @@ private:
     
         // 执行坐标转换
         sensor_msgs::msg::PointCloud2 transformed_cloud;
-        pcl_ros::transformPointCloud("base_link", transform_stamp, output, transformed_cloud);
+        pcl_ros::transformPointCloud("velodyne", transform_stamp, output, transformed_cloud);
     
         // 发布转换后的点云消息
         publisher_1->publish(transformed_cloud);

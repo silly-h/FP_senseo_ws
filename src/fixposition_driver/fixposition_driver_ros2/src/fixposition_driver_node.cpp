@@ -41,8 +41,8 @@ namespace fixposition {
 FixpositionDriverNode::FixpositionDriverNode(std::shared_ptr<rclcpp::Node> node, const FixpositionDriverParams& params)
     : FixpositionDriver(params),
       node_(node),
-      rawimu_pub_(node_->create_publisher<sensor_msgs::msg::Imu>("/fixposition/imu_raw", 100)),
-      corrimu_pub_(node_->create_publisher<sensor_msgs::msg::Imu>("/sensing/imu/tamagawa/imu_raw", 100)),
+      rawimu_pub_(node_->create_publisher<sensor_msgs::msg::Imu>("/imu_raw", 100)),
+      corrimu_pub_(node_->create_publisher<sensor_msgs::msg::Imu>("/fixposition/corr_imu", 100)),
       navsatfix_pub_(node_->create_publisher<sensor_msgs::msg::NavSatFix>("/sensing/gnss/ublox/nav_sat_fix", 100)),
       navsatfix_gnss1_pub_(node_->create_publisher<sensor_msgs::msg::NavSatFix>("/fixposition/gnss1", 100)),
       navsatfix_gnss2_pub_(node_->create_publisher<sensor_msgs::msg::NavSatFix>("/fixposition/gnss2", 100)),

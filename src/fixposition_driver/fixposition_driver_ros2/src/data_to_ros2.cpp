@@ -30,7 +30,7 @@ void ImuDataToMsg(const ImuData& data, sensor_msgs::msg::Imu& msg) {
     } else {
         msg.header.stamp = GpsTimeToMsgTime(data.stamp);
     }
-    msg.header.frame_id = "tamagawa/imu_link";
+    msg.header.frame_id = "imu_link";
 
     tf2::toMsg(data.linear_acceleration, msg.linear_acceleration);
     tf2::toMsg(data.angular_velocity, msg.angular_velocity);
