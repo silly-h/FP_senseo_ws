@@ -14,7 +14,20 @@
 
 ## 安装
 
-请按照各个驱动的链接中的安装指南进行安装。
+### 环境
+
+ROS2 Galactic
+
+### 安装步骤
+
+1. 安装Fixposition VRTK2驱动和RoboSense RS16激光雷达驱动，请按照各个驱动的链接中的安装指南进行安装。
+
+2. 安装RoboSense激光雷达转换包和odom_to_llh功能包，执行以下命令：
+
+```bash
+colcon build
+source install/setup.bash
+```
 
 ## 使用
 
