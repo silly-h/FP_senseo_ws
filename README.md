@@ -17,6 +17,7 @@
 
 ### 环境
 
+ubuntu 20.04
 ROS2 Galactic
 
 ### 安装步骤
