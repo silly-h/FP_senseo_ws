@@ -1,6 +1,7 @@
 # Autoware Sensor Drivers for ROS2 Galactic
 
 这个仓库包含了一系列为基于ROS2 Galactic部署Autoware准备的传感器驱动。支持的硬件包括RoboSense的RS16激光雷达，Fixposition的VRTK2，OAK的双目相机和Agilex的mini底盘。
+![Example Image](image/未命名绘图.drawio-2.png)
 
 ## 内容
 
