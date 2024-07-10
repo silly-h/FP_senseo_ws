@@ -39,6 +39,7 @@ source install/setup.bash
 python3 autoware_lidar_time.py
 source install/setup.bash
 ros2 launch rslidar_sdk start.py
+ros2 run rs_to_velodyne rs_to_velodyne 
 # ros2 run lidar_adaption lidar_adaption //no use
 ```
 
@@ -123,6 +124,4 @@ rs_to_velodyne/src/rs_to_velodyne.cpp 97,231 line,configure your own topic and t
 ## 许可
 
 请参考各个驱动的许可信息。
-```
 
-注意，我在每个代码块前后都添加了三个反引号（\`\`\`）来创建代码块。这应该解决你的问题。
