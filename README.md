@@ -26,71 +26,71 @@ ROS2 Galactic
 
 2. 安装RoboSense激光雷达转换包和odom_to_llh功能包，执行以下命令：
 
-\`\`\`bash
+```bash
 colcon build
 source install/setup.bash
-\`\`\`
+```
 
 ## 使用
 
 ### LIDAR:
 
-\`\`\`bash
+```bash
 python3 autoware_lidar_time.py
 source install/setup.bash
 ros2 launch rslidar_sdk start.py
 # ros2 run lidar_adaption lidar_adaption //no use
-\`\`\`
+```
 
 ### CAMERA:
 
-\`\`\`bash
+```bash
 source install/setup.bash
 ros2 launch depthai_examples mobile_publisher.launch.py camera_model:=OAK-D-LITE
 ros2 launch depthai_examples rgb_publisher.launch.py camera_model:=OAK-D-LITE
-\`\`\`
+```
 
 ### VRTK2:
 
 在串行模式下启动节点，运行：
 
-\`\`\`bash
+```bash
 ros2 launch fixposition_driver_ros2 serial.launch
-\`\`\`
+```
 
 在TCP模式（Wi-Fi）下：
 
-\`\`\`bash
+```bash
 ros2 launch fixposition_driver_ros2 tcp.launch
-\`\`\`
+```
 
 在TCP模式（以太网）下：
 
-\`\`\`bash
+```bash
 ros2 launch fixposition_driver_ros2 tcp.launch
-\`\`\`
+```
 
 ### Building:
 
-\`\`\`bash
+```bash
 colcon build --packages-skip fixposition_driver_ros1 fixposition_odometry_converter_ros1
-\`\`\`
+```
 
 ### VRTK2 odom topic to llh
 
-\`\`\`bash
+```bash
 source install/setup.bash 
 ros2 run odm_to_llh odm_to_llh 
-\`\`\`
+```
 
 ### git:
 
-\`\`\`bash
+```bash
 cd src 
 git add .
 git commit -m " "
 git push origin main
-\`\`\`
+```
 
 ### topic:
 
@@ -123,3 +123,6 @@ rs_to_velodyne/src/rs_to_velodyne.cpp 97,231 line,configure your own topic and t
 ## 许可
 
 请参考各个驱动的许可信息。
+```
+
+注意，我在每个代码块前后都添加了三个反引号（\`\`\`）来创建代码块。这应该解决你的问题。
